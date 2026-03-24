@@ -973,3 +973,53 @@
 
 </body>
 </html>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init('jLf8NfLYHTHxVsjJ7');
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name  = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      document.getElementById('formSuccess').style.display = 'none';
+      document.getElementById('formError').style.display   = 'none';
+
+      if (!name || !phone || !email) {
+        document.getElementById('formError').textContent = 'Prosím vyplňte všechna povinná pole.';
+        document.getElementById('formError').style.display = 'block';
+        return;
+      }
+
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Odesílám…';
+      btn.disabled = true;
+
+      try {
+        const result = await emailjs.send('service_dy6rsid', 'template_nm24k9i', {
+          from_name:  name,
+          from_email: email,
+          phone:      phone,
+          message:    document.getElementById('message').value.trim()
+        });
+
+        if (result.status === 200) {
+          document.getElementById('formSuccess').style.display = 'block';
+          form.reset();
+        } else {
+          document.getElementById('formError').style.display = 'block';
+        }
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        document.getElementById('formError').style.display = 'block';
+      } finally {
+        btn.textContent = 'Poslat objednávku →';
+        btn.disabled = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
