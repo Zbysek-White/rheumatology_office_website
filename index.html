@@ -413,7 +413,10 @@
     }
 
     /* ── CONTACT ──────────────────────────────────────────────────── */
-    #contact { background: var(--light); }
+    #contact {
+      background: linear-gradient(rgba(244,248,249,0.78), rgba(244,248,249,0.78)),
+                  url(wellnerova.jpg) center center / cover no-repeat;
+    }
 
     .contact-grid {
       display: grid;
@@ -711,7 +714,7 @@
         <p>Poskytujeme odbornou péči a diagnostiku v oblasti revmatologie. Našim cílem je zlepšit kvalitu života pacientů s revmatickými onemocněními prostřednictvím individuálního přístupu a moderní medicíny.</p>
         <div class="hero-ctas">
           <a href="tel:+420585227121" class="btn-primary">☎ Zavolat: +420 585 227 121</a>
-          <a href="/cdn-cgi/l/email-protection#e78388859588948b869186c9858e8b8c889186a7808a868e8bc984888a" class="btn-outline">✉ Napsat e-mail</a>
+          <a href="#contact" class="btn-outline">✉ Napsat zprávu</a>
         </div>
       </div>
       <div class="hero-image-wrap">
@@ -750,7 +753,7 @@
             </tr>
             <tr>
               <td>E-mail</td>
-              <td><a href="/cdn-cgi/l/email-protection#1c78737e6e736f707d6a7d327e757077736a7d5c7b717d7570327f7371"><span class="__cf_email__" data-cfemail="0a6e6568786579666b7c6b2468636661657c6b4a6d676b636624696567">[email&#160;protected]</span></a></td>
+              <td><a href="#contact">Napsat zprávu</a></td>
             </tr>
           </table>
         </div>
@@ -788,7 +791,7 @@
           <h3>Jak se objednat</h3>
           <ol>
             <li><span class="check">1.</span> Zavolejte ordinaci na číslo +420 585 227 121</li>
-            <li><span class="check">2.</span> Nebo napište e-mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0f6b606d7d607c636e796e216d66636460796e4f68626e6663216c6062">[email&#160;protected]</a></li>
+            <li><span class="check">2.</span> Nebo vyplňte <a href="#contact">kontaktní formulář</a> níže</li>
             <li><span class="check">3.</span> Vyplňte formulář v sekci Kontakty a objednání níže</li>
           </ol>
           <p style="font-size:.88rem;color:var(--teal);margin-top:14px;font-weight:600;">Nejrychlejší forma je telefonická domluva.</p>
@@ -848,7 +851,7 @@
               </div>
               <div class="contact-item">
                 <span class="label">E-mail</span>
-                <span class="value"><a href="/cdn-cgi/l/email-protection#ddb9b2bfafb2aeb1bcabbcf3bfb4b1b6b2abbc9dbab0bcb4b1f3beb2b0"><span class="__cf_email__" data-cfemail="a9cdc6cbdbc6dac5c8dfc887cbc0c5c2c6dfc8e9cec4c8c0c587cac6c4">[email&#160;protected]</span></a></span>
+                <span class="value"><a href="#contact">Napsat zprávu</a></span>
               </div>
             </div>
           </div>
@@ -903,7 +906,7 @@
           <p class="footer-tagline">IČO: 28635825<br>Wellnerova 1215/3, 779 00 Olomouc</p>
           <div class="footer-contact-links">
             <a href="tel:+420585227121">☎ +420 585 227 121</a>
-            <a href="/cdn-cgi/l/email-protection#066269647469756a67706728646f6a6d69706746616b676f6a2865696b">✉ <span class="__cf_email__" data-cfemail="bdd9d2dfcfd2ced1dccbdc93dfd4d1d6d2cbdcfddad0dcd4d193ded2d0">[email&#160;protected]</span></a>
+            <a href="#contact">Napsat zprávu</a>
           </div>
         </div>
         <div class="footer-col">
@@ -919,7 +922,7 @@
           <h4>Kontakt</h4>
           <ul>
             <li><a href="tel:+420585227121">+420 585 227 121</a></li>
-            <li><a href="/cdn-cgi/l/email-protection#c0a4afa2b2afb3aca1b6a1eea2a9acabafb6a180a7ada1a9aceea3afad"><span class="__cf_email__" data-cfemail="75111a17071a06191403145b171c191e1a0314351218141c195b161a18">[email&#160;protected]</span></a></li>
+            <li><a href="#contact">Napsat zprávu</a></li>
             <li style="color:rgba(255,255,255,.5);font-size:.88rem;margin-top:8px;">Wellnerova 1215/3<br>779 00 Olomouc</li>
           </ul>
         </div>
@@ -1004,7 +1007,6 @@
           phone:      phone,
           message:    document.getElementById('message').value.trim()
         });
-
         if (result.status === 200) {
           document.getElementById('formSuccess').style.display = 'block';
           form.reset();
